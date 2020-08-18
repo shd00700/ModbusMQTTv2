@@ -133,6 +133,7 @@ func JsonMaker(a uint16, leng uint16, ReadHoldRegdata []uint16, ReadRegIndata []
 	for i := 0; i < int(leng); i++ {
 		ReadRegIn_arr[ReadRegIn_alias[int(a)+i]] = ReadRegIndata[i]
 	}
+	// Test
 	for i := 0; i < int(leng); i++ {
 		ReadCoil_arr[ReadCoil_alias[int(a)+i]] = ReadCoildata[i]
 	}
@@ -148,13 +149,4 @@ func JsonMaker(a uint16, leng uint16, ReadHoldRegdata []uint16, ReadRegIndata []
 		panic(err)
 	}
 	return jsonmaker
-}
-
-func ErrJsonMaker() interface{} {
-	j := ErrJson{"You entered it iolncorrectly."}
-	p, err := json.Marshal(j)
-	if err != nil {
-		panic(err)
-	}
-	return p
 }
