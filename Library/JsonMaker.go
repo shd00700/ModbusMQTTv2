@@ -2,7 +2,6 @@ package Library
 
 import (
 	"encoding/json"
-	//"os"
 )
 
 type ReadCoilStruct struct {
